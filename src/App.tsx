@@ -9,12 +9,14 @@ import {Footer} from "./components/footer/Footer.tsx";
 import {GoTopBtn} from "./components/goTopBtn/GoTopBtn.tsx";
 import {Particle} from "./components/particle/Particle.tsx";
 import {Slogan} from "./components/slogan/Slogan.tsx";
+import {Toaster} from 'react-hot-toast';
 
 function App() {
 
   return (
 
       <div>
+          <Toaster position="top-right" />
           <Particle/>
           <Header/>
           <Main/>

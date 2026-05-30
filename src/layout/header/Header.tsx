@@ -1,6 +1,6 @@
-import React   from "react";
+import React from "react";
 import {Logo} from "../../components/logo/Logo.tsx";
-import {S} from "../header/Header_Styles.ts"
+import {S} from "./Header_Styles.ts"
 import {Icon} from "../../components/icon/Icon.tsx";
 import {Container} from "../../components/Container.ts";
 import {FlexWrapper} from "../../components/FlexWrapper.ts";
@@ -20,7 +20,7 @@ export const SocialItemsData = [
     }
 
 ] ;
-const items=['Projects','Skills','Experience',"Contact"]
+//const items=['Projects','Skills','Experience',"Contact"]
 
 export const Header = () => {
     const [width, setWidth] = React.useState(window.innerWidth);

@@ -63,7 +63,7 @@ const StyledMain = styled.section`
 
     @media ${theme.media.tablet} {
         padding-top: 130px;
-
+    }
 `;
 const Content = styled.div`
     display: flex;

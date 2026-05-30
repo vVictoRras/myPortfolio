@@ -6,6 +6,12 @@ const Contacts = styled.section`
     position: relative;
     background-color: ${theme.colors.primaryBg};
 `
+
+const Error= styled.span `
+    color: red;
+    font-size: 0.75rem;
+    margin-top: -8px;
+`
 const Form = styled.form`
     max-width: 540px;
     width: 100%;
@@ -35,8 +41,7 @@ const Field = styled.input`
     letter-spacing: 0.05em;
     color: ${theme.colors.font};
     font-family: "Poppins", sans-serif;
-
-
+    
     &::placeholder {
         color: ${theme.colors.placeholderColor};
         text-transform: capitalize;
@@ -48,5 +53,5 @@ const Field = styled.input`
 `
 
 export const S = {
-    Contacts, Form, Field
+    Contacts, Form, Field, Error
 }

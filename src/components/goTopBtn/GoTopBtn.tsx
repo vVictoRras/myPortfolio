@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import styled from "styled-components";
 import {Icon} from "../icon/Icon.tsx";
 import {animateScroll as scroll} from 'react-scroll';

@@ -15,7 +15,7 @@ export const Skill: React.FC<SkillPropsType> = (props: SkillPropsType) => {
         <StyledSkill>
             <Fade>
                 <SkillTitle> {props.title}</SkillTitle>
-                <ProgressBar progress={props.progress}></ProgressBar>
+                <ProgressBar progress={props.progress} title={props.title}></ProgressBar>
             </Fade>
 
         </StyledSkill>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {theme} from "../../../portfolio-start-project-vite-main/src/styles/Theme.tsx";
+import {theme} from "../styles/Theme.tsx";
 import {font} from "../styles/Common.tsx";
 
 export const Button = styled.button`

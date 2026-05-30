@@ -4,8 +4,6 @@ import {SectionTitle} from "../../../components/SectionTitle.tsx";
 import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Container} from "../../../components/Container.ts";
 import {Fade} from "react-awesome-reveal";
-import {DecorativeElement} from "../main/Main.tsx";
-
 
 type Step = {
     label: string;

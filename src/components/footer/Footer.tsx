@@ -15,7 +15,6 @@ const SocialItemsData = [
         iconId: "tg"
     }
 ]
-
 export const Footer: React.FC = () => {
     return (
         <S.Footer>
@@ -23,11 +22,11 @@ export const Footer: React.FC = () => {
                 <FlexWrapper wrap={'wrap'} justify={"space-between"} direction={"row"} align={"center"}>
                     <S.Text>
                         <span>Call me: </span>
-                        <span>123-456-789</span>
+                        <span>+373 777 72750</span>
                     </S.Text>
                     <S.Text>
                         <span>Email: </span>
-                        <span>sssssssss@gmail.com</span>
+                        <span>sirotilov@gmail.com</span>
                     </S.Text>
                     <S.SocialList>
                         {SocialItemsData.map((s, index) => {

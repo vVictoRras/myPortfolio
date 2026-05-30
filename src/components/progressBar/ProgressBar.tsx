@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import {SkillPropsType} from "../../layout/sections/skills/skill/Skill.tsx";
 import {FlexWrapper} from "../FlexWrapper.ts";
 
+type Props = {
+    progress: number;
+};
 export const ProgressBar: React.FC<SkillPropsType> = (props: SkillPropsType) => {
     return (
         <FlexWrapper >
@@ -23,7 +26,7 @@ const ProgressBarContainer = styled.div`
     
 `
 
-const ProgressBarFill = styled.div`
+const ProgressBarFill = styled.div<Props>`
   width: ${({ progress }) => progress}%;
   height: 100%;
     background: linear-gradient(270deg, #13adc7 0%, #6978d1 66.67%, #945dd6 100%);

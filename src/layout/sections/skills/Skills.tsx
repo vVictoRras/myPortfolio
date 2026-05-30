@@ -8,7 +8,6 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 import { Container } from "../../../components/Container.ts";
 import {font} from "../../../styles/Common.tsx";
 import {Fade} from "react-awesome-reveal";
-import drawing from "../../../assets/images/drawing.svg";
 
 const skillData = [
     {
