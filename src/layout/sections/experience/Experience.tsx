@@ -14,7 +14,7 @@ const steps: Step[] = [
     { label: "2017", description: "Software Engineer - Sheriff LTD" },
     { label: "2018", description: "Software Engineer - Sheriff LTD" },
     { label: "2019", description: "Software Engineer - Sheriff LTD" },
-    { label: "2020", description: "Manager in trade company" }
+    { label: "2020-2026", description: "Manager in trade company" }
 ];
 
 export const Experience = () => {
