@@ -11,22 +11,10 @@ type Step = {
 };
 
 const steps: Step[] = [
-    {
-        label: "2017",
-        description: "Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        label: "2019",
-        description: "Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        label: "2020",
-        description: "Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    },
-    {
-        label: "2023",
-        description: "Lorem ipsum amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    }
+    { label: "2017", description: "Software Engineer - Sheriff LTD" },
+    { label: "2018", description: "Software Engineer - Sheriff LTD" },
+    { label: "2019", description: "Software Engineer - Sheriff LTD" },
+    { label: "2020", description: "Manager in trade company" }
 ];
 
 export const Experience = () => {
@@ -35,13 +23,16 @@ export const Experience = () => {
             <Container>
                 <SectionTitle>Experience</SectionTitle>
                 <FlexWrapper>
-                    <Fade >
+                    <Fade style={{ width: "100%" }}>
                         <Timeline>
                             {steps.map((step, index) => (
-                                <Step key={index}>
+                                <StepItem key={index}>
                                     <YearTitle>{step.label}</YearTitle>
+                                    <MarkerWrapper>
+                                        <CircleMarker />
+                                    </MarkerWrapper>
                                     <Description>{step.description}</Description>
-                                </Step>
+                                </StepItem>
                             ))}
                         </Timeline>
                     </Fade>
@@ -50,107 +41,123 @@ export const Experience = () => {
         </ExperienceSection>
     );
 };
+
 const ExperienceSection = styled.section`
     position: relative;
     background-color: ${theme.colors.secondaryBg};
-   
+    padding: 60px 0;
 `;
 
 const Timeline = styled.div`
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 10px auto;
-    gap:30px;
+    margin: 40px auto;
+    width: 100%;
 
-    @media ${theme.media.tablet} {
-        gap: 10px;
+    @media ${theme.media.mobile} {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 725px;
+        margin: 0 auto;
     }
-    
-    &::before {
+`;
+
+const StepItem = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1; /* Распределяем элементы строго поровну */
+
+    /* Линия теперь строится между соседними элементами */
+    &::after {
         content: '';
         position: absolute;
-        left: 12%;
-        right: 12%;
-        top: 20%;
+        /* Центрируем по вертикали относительно MarkerWrapper (высота года 24px + маргин 35px = 59px, плюс половина кружка 10px = ~69px) */
+        top: 69px;
+        left: 50%; /* Начинается строго из центра текущего кружка */
+        width: 100%; /* Тянется до центра следующего кружка */
         height: 8px;
-        border-radius: 83px;
-        background: linear-gradient(270deg, #13adc7 0%, #4e89ce 45.5%, #6978d1 66.67%, #945dd6 100%);
+        background: linear-gradient(90deg, #945dd6 0%, #6978d1 33.33%, #4e89ce 66.67%, #13adc7 100%);
         transform: translateY(-50%);
         z-index: 0;
     }
 
-    @media ${theme.media.mobile} {
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        max-width: 725px;
-        margin: 0 auto;
-        
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0; 
-            top: 50%;
-            height: calc(100% - 40px); 
-            width: 8px;
-        }
-
-    }
-               
-`;
-
-const Step = styled.div`
-    position: relative;
-    text-align: center;
-    z-index: 1;
-    width: 100%;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 20%;
-        width: 20px;
-        height: 20px;
-        background-color: ${theme.colors.font};
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
+    /* У последнего элемента линию справа убираем */
+    &:last-child::after {
+        display: none;
     }
 
     @media ${theme.media.mobile} {
+        align-items: flex-start;
         text-align: left;
-        position: relative;
+        padding-left: 50px;
         margin-bottom: 40px;
-        padding-left: 20px;
-        &::before {
-            content: '';
-            position: absolute;
-            left: 4px;
-            top: 13px;
-            width: 20px;
-            height: 20px;
+        width: 100%;
 
+        /* Вертикальная линия для мобильной версии */
+        &::after {
+            left: 29px; /* Центр кружка на мобилке */
+            top: 16px;
+            width: 8px;
+            height: calc(100% + 40px); /* Соединяет кружки по вертикали */
+            transform: translateX(-50%);
+            background: linear-gradient(180deg, #945dd6 0%, #13adc7 100%);
         }
 
+        &:last-child::after {
+            display: none;
+        }
     }
 `;
 
 const YearTitle = styled.h3`
-        margin-bottom: 45px;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    z-index: 2;
+
     @media ${theme.media.mobile} {
-        margin-bottom: 20px;
+        margin-bottom: 8px;
     }
 `;
 
+/* Контейнер для кружка, чтобы гарантировать его центрирование */
+const MarkerWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+    z-index: 2;
+
+    @media ${theme.media.mobile} {
+        position: absolute;
+        left: 20px;
+        top: 6px;
+        width: 20px;
+        margin-bottom: 0;
+    }
+`;
+
+const CircleMarker = styled.div`
+    width: 20px;
+    height: 20px;
+    background-color: ${theme.colors.font};
+    border-radius: 50%;
+`;
+
 const Description = styled.p`
-    
     line-height: 1.6;
     max-width: 260px;
     margin: 0 auto;
+    z-index: 2;
+    
     @media ${theme.media.mobile} {
         max-width: 100%;
+        margin: 0;
     }
-`
-
+`;
