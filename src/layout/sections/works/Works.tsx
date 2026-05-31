@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle.tsx";
-import projImg from "../../../assets/images/projImg.webp";
 import {FlexWrapper} from "../../../components/FlexWrapper.ts";
 import {Work} from "./work/Work.tsx";
 import {Container} from "../../../components/Container.ts";
@@ -8,6 +7,7 @@ import {theme} from "../../../styles/Theme.tsx";
 import proj1 from "../../../assets/images/proj1.webp";
 import proj2 from "../../../assets/images/proj2.webp";
 import proj3 from "../../../assets/images/proj3.webp";
+import proj4 from "../../../assets/images/proj4.png";
 
 const worksData = [
     {
@@ -37,13 +37,11 @@ const worksData = [
         id: 3
     },
     {
-        title: 'PROJECT 4',
-        src: projImg,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, ' +
-            'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ' +
-            'Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
+        title: 'CLOCK',
+        src: proj4,
+        text: 'Simple analog clock',
         type: 'react',
-        repoUrl: 'https://github.com/your-username/social-network',
+        repoUrl: 'https://vvictorras.github.io/Clock/',
         id: 4
     }]
 
