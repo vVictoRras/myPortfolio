@@ -6,13 +6,16 @@ import {Container} from '../Container.ts';
 
 const SocialItemsData = [
     {
-        iconId: "github"
+        iconId: "tg",
+        href: "https://t.me/Sirotilo"
     },
     {
-        iconId: "in"
+        iconId: "in",
+        href: "https://www.linkedin.com/in/sirotilov/"
     },
     {
-        iconId: "tg"
+        iconId: "github",
+        href: "https://github.com/vVictoRras"
     }
 ]
 export const Footer: React.FC = () => {
@@ -32,7 +35,7 @@ export const Footer: React.FC = () => {
                         {SocialItemsData.map((s, index) => {
                             return (
                                 <S.SocialItem key={index}>
-                                    <S.SocialLink>
+                                    <S.SocialLink href={s.href} target="_blank" rel="noreferrer">
                                         <Icon height={'32'} width={'32'} viewBox={'0 0 32 32'} iconId={s.iconId}/>
                                     </S.SocialLink>
                                 </S.SocialItem>

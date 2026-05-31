@@ -10,13 +10,16 @@ import {DesktopMenu} from "./headerMenu/DesktopMenu/DesktopMenu.tsx";
 
 export const SocialItemsData = [
     {
-        iconId: "tg"
+        iconId: "tg",
+        href: "https://t.me/Sirotilo"
     },
     {
-        iconId: "in"
+        iconId: "in",
+        href: "https://www.linkedin.com/in/sirotilov/"
     },
     {
-        iconId: "github"
+        iconId: "github",
+        href: "https://github.com/vVictoRras"
     }
 
 ] ;
@@ -44,7 +47,7 @@ export const Header = () => {
                         {SocialItemsData.map((s, index) => {
                             return (
                                 <S.SocialItem key={index}>
-                                    <S.SocialLink>
+                                    <S.SocialLink href={s.href} target="_blank" rel="noreferrer">
                                         <Icon iconId={s.iconId}/>
                                     </S.SocialLink>
                                 </S.SocialItem>
