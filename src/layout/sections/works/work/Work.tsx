@@ -8,6 +8,7 @@ type WorkPropsType = {
     title?: string;
     text?: string;
     src?: string;
+    repoUrl?: string;
 }
 
 export const Work = (props: WorkPropsType) => {
@@ -20,7 +21,9 @@ export const Work = (props: WorkPropsType) => {
                 <Description>
                     <Title>{props.title}</Title>
                     <Text>{props.text}</Text>
-                    <Button>Look It Up</Button>
+                    <a href={props.repoUrl} target="_blank" rel="noopener noreferrer">
+                        <Button>Look It Up</Button>
+                    </a>
                 </Description>
             </Fade>
         </StyledWork>

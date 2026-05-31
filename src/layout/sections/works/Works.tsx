@@ -10,19 +10,21 @@ import proj2 from "../../../assets/images/proj2.webp";
 
 const worksData = [
     {
-        title: 'SOCIAL NETWORK',
+        title: 'TODO LIST',
         src: proj1,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n' +
+        text: 'A ToDo List built with React, TypeScript and Material UI. Supports creating multiple todolists, adding, deleting and filtering tasks, inline title editing, and light/dark theme toggle. State managed with useReducer.\n' +
             '\n',
         type: 'spa',
+        repoUrl: 'https://vvictorras.github.io/ToDoList/',
         id: 1,
     },
     {
-        title: 'TIMER',
+        title: 'COUNTER',
         src: proj2,
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n' +
+        text: 'A simple counter app built with React and TypeScript. Supports increment, decrement and reset actions.\n' +
             '\n',
         type: 'react',
+        repoUrl: 'https://vvictorras.github.io/myCounter/',
         id: 2
     },
     {
@@ -32,6 +34,7 @@ const worksData = [
             'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ' +
             'Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         type: 'spa',
+        repoUrl: 'https://github.com/your-username/social-network',
         id: 3
     },
     {
@@ -41,6 +44,7 @@ const worksData = [
             'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ' +
             'Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         type: 'react',
+        repoUrl: 'https://github.com/your-username/social-network',
         id: 4
     }]
 
@@ -55,6 +59,7 @@ export const Works = () => {
                             <Work title={w.title}
                                   src={w.src}
                                   text={w.text}
+                                  repoUrl={w.repoUrl}
                                   key={w.id}/>
                         )
                     })}
