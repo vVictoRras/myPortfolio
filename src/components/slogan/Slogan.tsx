@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import {SectionTitle} from "../SectionTitle.tsx";
 import {Button} from "../Button.ts";
