@@ -5,12 +5,10 @@ import {Button} from "../Button.ts";
 import {Container} from "../Container.ts";
 import {FlexWrapper} from "../FlexWrapper.ts";
 import {theme} from "../../styles/Theme.tsx";
-// 1. Импортируем библиотеку конфетти
-import confetti from "canvas-commoni" // Замени на canvas-confetti, если опечатался
 import confettiFromLib from "canvas-confetti";
 
 export const Slogan = () => {
-    // 2. Создаем стейт для динамического текста кнопки
+
     const [buttonText, setButtonText] = useState("Hire me");
 
     // 3. Функция, которая запускает салют
